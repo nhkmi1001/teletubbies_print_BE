@@ -1,8 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import (BaseUserManager, AbstractBaseUser)
-import store
-import ImageStorage
-from django.utils import timezone
 class UserManager(BaseUserManager):
     def create_user(self, email, username, phone_number, password=None):
         if not email:

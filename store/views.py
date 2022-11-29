@@ -2,9 +2,7 @@ from rest_framework.views import APIView
 from rest_framework.generics import get_object_or_404
 from rest_framework import status, permissions
 from rest_framework.response import Response
-from store import serializers
-from store.models import Filter, Comment
-from users.models import User
+from store.models import Filter
 from ImageStorage.views import style
 from store.serializers import FilterSerializer, ImageStorageSerializer, ImageSerializer, CommentSerializer, ImageListSerializer
 from ImageStorage.models import Image
@@ -49,8 +47,7 @@ class ImageView(APIView):
         Images = Image.objects.all()
         serializer = ImageListSerializer(Images, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
-    def post(self, request, image_id):
-        pass
+
         
         
 class ImageDetailView(APIView): 

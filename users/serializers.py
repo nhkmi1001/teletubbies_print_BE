@@ -1,7 +1,5 @@
 from rest_framework import serializers
 from users.models import User
-from store.models import Filter, Comment
-from ImageStorage.models import Image
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from store.serializers import OutputImageSerializer
 

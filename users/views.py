@@ -24,19 +24,3 @@ class UserMypageView(APIView):
         user = User.objects.get(id=user_id) 
         serializer = UserMypageSerializer(user)
         return Response(serializer.data, status=status.HTTP_200_OK)        
-              
-              
-        
-# class UserDetailView(APIView): #이메일, 비밀번호, 유저네임, 핸드폰, 주소
-#     def put(self, request, user_id): #정보수정페이지
-#         user = get_object_or_404(User, id=user_id)
-#         print(user)
-#         if request.user.id == user.id:
-#             serializer = UserInfoModSerializer(user, data=request.data)
-#             if serializer.is_valid():
-#                 serializer.save()
-#                 return Response(serializer.data, status=status.HTTP_200_OK)
-#             else:
-#                 return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-#         else:
-#             return Response("권한이 없습니다.", status=status.HTTP_403_FORBIDDEN)
